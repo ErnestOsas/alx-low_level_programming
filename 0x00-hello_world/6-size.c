@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 /**
  * main - A computer program that prints type size
  * Return: 0 (Success)
