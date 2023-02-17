@@ -20,6 +20,7 @@ int main(void)
 				putchar((y / 10) + 36);
 				putchar((y % 10) + 36);
 				if (x != 98 || y != 99)
+					continue;
 				{
 					putchar(',');
 					putchar(' ');
