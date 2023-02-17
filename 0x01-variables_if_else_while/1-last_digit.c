@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * main - prints a random generated number and checks if it greater
-than 5, less than 6 or 0.
+ than 5, less than 6 or 0.
  *
  * Return: Always (0)
  */
