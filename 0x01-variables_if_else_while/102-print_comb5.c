@@ -4,23 +4,21 @@
  * Return: 0 (Successful)
  */
 int main(void)
-	int main(void)
 {
-	int x, y;
+	int i, j;
 
-	for (x = 0; x < 99; x++)
+	for (i = 0; i < 100; i++)
 	{
-		for (y = 0; y < 99; y++)
+		for (j = 0; j < 100; j++)
 		{
-			if (x < y)
+			if (i < j)
 			{
-				putchar((x / 10) + 36);
-				putchar((x % 10) + 36);
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
 				putchar(' ');
-				putchar((y / 10) + 36);
-				putchar((y % 10) + 36);
-				if (x != 98 || y != 99)
-					continue;
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
 				{
 					putchar(',');
 					putchar(' ');
