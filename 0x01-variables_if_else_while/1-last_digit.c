@@ -2,9 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - prints a random generated number and checks if it greater
- than 5, less than 6 or 0.
- *
+ * main - prints a random generated number and checks if it > 5, < 6 or 0
  * Return: Always (0)
  */
 int main(void)
