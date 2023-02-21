@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
 * print_alphabet_x10 - the print_alphabet is repeated 10 times.
 * Return: Nothing.
