@@ -19,6 +19,4 @@ else
 printf(", ");
 }
 return (0);
-} while (num < 50);
-return (0);
 }
