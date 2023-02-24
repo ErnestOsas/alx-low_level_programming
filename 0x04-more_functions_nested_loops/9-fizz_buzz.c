@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * FizzBuzz - For any number divisible by 3 print Fizz
+ * main - FizzBuzz - For any number divisible by 3 print Fizz
  * For any number divisible by 5 print Buzz
  * For any number divisible by both 3 & 5 print FizzBuzz
  * The % operator is important in this program
