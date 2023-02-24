@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 /**
  * FizzBuzz - For any number divisible by 3 print Fizz
@@ -35,5 +34,6 @@ int main(void)
 			printf("%d\n", j);
 		}
 	}
+	printf("\n");
 	return (0);
 }
