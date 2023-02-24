@@ -15,15 +15,15 @@ int main(void)
 
 		if (j % 3 == 0 && j % 5 != 0)
 		{
-			printf("Fizz");
+			printf(" Fizz");
 		}
 		else if (j % 5 == 0 && j % 3 != 0)
 		{
-			printf("Buzz");
+			printf(" Buzz");
 		}
 		else if (j % 3 == 0 && j % 5 == 0)
 		{
-			printf("FizzBuzz");
+			printf(" FizzBuzz");
 		}
 		else if (j == 1)
 		{
@@ -31,7 +31,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d", j);
+			printf(" %d", j);
 		}
 	}
 	printf("\n");
