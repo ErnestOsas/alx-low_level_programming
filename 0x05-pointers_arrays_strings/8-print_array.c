@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_array - a function that prints n elements of an array
@@ -6,17 +7,18 @@
  * @n: is the number of elements OF the array to be printed
  * Return: a and n inputs
  */
+
 void print_array(int *a, int n)
 {
-	int i;
+	int index;
 
-	for (i = 0; i < (n - 1); i++)
+	for (index = 0; index < n; index++)
 	{
-		printf("%d, ", a[i]);
-	}
-		if (i == (n - 1))
+		printf("%d", a[index]);
+		if (index != (n - 1))
 		{
-			printf("%d", a[n - 1]);
+			printf(", ");
 		}
-			printf("\n");
+	}
+	putchar('\n');
 }
