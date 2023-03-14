@@ -1,16 +1,16 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
  * alloc_grid - Entry point
- *@width: rows of matrix
+ *@width: rows of grid
  *@height: columns of string
  * Return: a pointer to a 2 dimensional array of integers or null
  */
 int **alloc_grid(int width, int height)
 {
-	int **matrix;
+	int **grid;
 	int i;
 	int j;
 	int l;
@@ -18,20 +18,20 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	matrix = (int **)malloc(height * sizeof(int *));
-	if (matrix == NULL)
+	grid = (int **)malloc(height * sizeof(int *));
+	if (grid == NULL)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		*(matrix + i) = (int *)malloc(width * sizeof(int));
-		if (*(matrix + i) == NULL)
+		*(grid + i) = (int *)malloc(width * sizeof(int));
+		if (*(grid + i) == NULL)
 		{
 			for (i = 0; i < height; i++)
 			{
-				p = matrix[i];
+				p = grid[i];
 				free(p);
 			}
-			free(matrix);
+			free(grid);
 			return (NULL);
 		}
 	}
@@ -39,8 +39,8 @@ int **alloc_grid(int width, int height)
 	{
 		for (j = 0; j < width; j++)
 		{
-			matrix[l][j] = 0;
+			grid[l][j] = 0;
 		}
 	}
-	return (matrix);
+	return (grid);
 }
