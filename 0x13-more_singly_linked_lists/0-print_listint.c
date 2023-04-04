@@ -9,13 +9,10 @@
 size_t print_listint(const listint_t *h)
 {
 size_t nodes = 0;
-const listint_t *temp;
 
 while (h)
 {
-temp = h;
-if (temp->n == 9 || temp->n == 8)
-printf("%d\n", temp->n);
+printf("%d\n", h->n);
 nodes++;
 h = h->next;
 }
