@@ -97,3 +97,54 @@ listint_t *add_nodeint(listint_t **head, const int n)
 }
 
 ````
+
+3. Add node at the end
+Write a function that adds a new node at the end of a listint_t list.
+
+Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
+Return: the address of the new element, or NULL if it failed
+
+```
+#include "lists.h"
+/**
+ * add_nodeint_end - Adds a new node at the end of a listint_t list.
+ *
+ * @head: A pointer to the address of the head of the listint_t list.
+ * @n: The integer value to be stored in the new node.
+ *
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new element.
+ */
+listint_t *add_nodeint_end(listint_t **head, const int n)
+{
+    listint_t *new_node, *end_node;
+
+    /* Allocate memory for the new node */
+    new_node = malloc(sizeof(listint_t));
+    if (new_node == NULL)
+        return (NULL);
+
+    /* Initialize the new node */
+    new_node->n = n;
+    new_node->next = NULL;
+
+    /* If the list is empty, make the new node the head */
+    if (*head == NULL)
+    {
+        *head = new_node;
+        return (*head);
+    }
+
+    /* Traverse the list until the end is reached */
+    end_node = *head;
+    while (end_node->next != NULL)
+        end_node = end_node->next;
+
+    /* Add the new node to the end */
+    end_node->next = new_node;
+
+    /* Return the head of the list */
+    return (*head);
+}
+
+```
