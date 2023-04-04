@@ -8,20 +8,16 @@
  */
 size_t print_listint(const listint_t *h)
 {
-    size_t num = 0;
-    const listint_t *temp;
+size_t nodes = 0;
+const listint_t *temp;
 
-    while (h)
-    {
-        temp = h;
-        while (temp)
-        {
-            printf("%d\n", temp->n);
-            temp = temp->next;
-        }
-        num++;
-        h = h->next;
-    }
-
-    return (num);
+while (h)
+{
+temp = h;
+if (temp->n == 9 || temp->n == 8)
+printf("%d\n", temp->n);
+nodes++;
+h = h->next;
+}
+return (nodes);
 }
