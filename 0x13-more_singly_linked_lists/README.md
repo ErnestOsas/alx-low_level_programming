@@ -148,3 +148,37 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 }
 
 ```
+
+4. Free list
+Write a function that frees a listint_t list.
+
+Prototype: void free_listint(listint_t *head);
+
+```
+
+#include "lists.h"
+/**
+ * free_listint - Frees a linked list of integers.
+ *
+ * This function takes a pointer to the head of a singly linked list of integers
+ * and frees all the nodes in the list. The memory previously allocated to each
+ * node is deallocated using the `free()` function.
+ *
+ * @head: A pointer to the head of the list to be freed.
+ *
+ * Return: void.
+ */
+void free_listint(listint_t *head)
+{
+    listint_t *temp, *current;
+
+    /* Iterate through the list, freeing each node */
+    for (current = head; current != NULL; current = temp)
+    {
+        /* Hold a pointer to the next node before freeing the current one */
+        temp = current->next;
+        free(current);
+    }
+}
+
+```
