@@ -36,3 +36,30 @@ size_t print_listint(const listint_t *h)
 }
 
 ```
+1. List length
+Write a function that returns the number of elements in a linked listint_t list.
+
+Prototype: size_t listint_len(const listint_t *h);
+
+/**
+ * listint_len - Returns the number of elements
+ * in a linked listint_t list.
+ * @h: A pointer to the head of the listint_t list.
+ *
+ * Return: The number of elements in the listint_t list.
+ */
+
+```
+#include "lists.h"
+
+size_t listint_len(const listint_t *h)
+{
+    size_t nodes; // declaring a variable 'nodes' of type size_t 
+    
+    for (nodes = 0; h; nodes++) // starting a loop until 'h' is not NULL
+    h = h->next; // moving the pointer 'h' to the next node and incrementing the count of 'nodes'
+
+    return (nodes); // returning the final count of nodes
+}
+
+```
