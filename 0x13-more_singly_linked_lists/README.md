@@ -182,3 +182,38 @@ void free_listint(listint_t *head)
 }
 
 ```
+
+5. Free
+Write a function that frees a listint_t list.
+
+Prototype: void free_listint2(listint_t **head);
+The function sets the head to NULL
+
+```
+#include "lists.h"
+
+/**
+ * free_listint2 - Frees the struct listint_t.
+ * @head: The pointer to the address.
+ *
+ * Output: Sets head to NULL.
+ */
+void free_listint2(listint_t **head)
+{
+    listint_t *temp; // Declare a temporary pointer to hold the next node.
+
+    if (head == NULL) // Check if the head pointer is NULL.
+        return; // If it is, return immediately.
+
+    while (*head != NULL) // Loop through the linked list until head is NULL.
+    {
+        temp = (*head)->next; // Store the next node in the temporary pointer.
+        free(*head); // Free the memory allocated for the current node.
+        *head = temp; // Move the head pointer to the next node.
+    }
+
+    head = NULL; // Set the value of the head pointer to NULL to indicate that the list has been successfully freed.
+}
+
+
+```
