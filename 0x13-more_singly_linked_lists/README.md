@@ -217,3 +217,40 @@ void free_listint2(listint_t **head)
 
 
 ```
+6. Pop
+Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
+
+Prototype: int pop_listint(listint_t **head);
+if the linked list is empty return 0
+
+```
+#include "lists.h"  // include the header file
+
+/**
+ * pop_listint - Deletes the head node of a singly linked list.
+ * @head: A pointer to the address of the listint_t list head.
+ *
+ * This function deletes the head node of a singly linked list. If the linked
+ * list is empty, the function returns 0. Otherwise, it returns the data (n)
+ * of the deleted node.
+ *
+ * Return: 0 if the linked list is empty. Otherwise, the data (n) of the
+ *         deleted head node.
+ */
+int pop_listint(listint_t **head)
+{
+    listint_t *temp;  // create a temporary node pointer
+    int data = 0;  // initialize data to 0
+
+    if (*head == NULL)  // if the list is empty (head pointer is NULL)
+    {
+        return (data);  // return 0
+    }
+    temp = *head;  // assign the head node to the temp pointer
+    data = temp->n;  // assign the data of the head node to the data variable
+    *head = (*head)->next;  // set the new head node to the next node
+    free(temp);  // free the old head node from memory
+    return (data);  // return the data of the deleted head node
+}
+
+```
