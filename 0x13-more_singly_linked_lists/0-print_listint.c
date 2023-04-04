@@ -3,7 +3,6 @@
 /**
  * print_listint - prints all the elements of this linked list
  * @h: print a linked list of the data type listint_t.
- *
  * Return: the number of nodes
  */
 size_t print_listint(const listint_t *h)
