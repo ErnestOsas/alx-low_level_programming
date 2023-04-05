@@ -394,3 +394,54 @@ return (new);
 }
 
 ```
+
+10. Delete at index
+Write a function that deletes the node at index index of a listint_t linked list.
+
+Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
+where index is the index of the node that should be deleted. Index starts at 0
+Returns: 1 if it succeeded, -1 if it failed
+
+```
+/**
+
+delete_nodeint_at_index - Deletes a node at a given index in a linked list.
+
+@head: Pointer to the head of the linked list.
+
+@index: Index of the node to delete.
+
+Return: 1 if successful, or -1 if an error occurred.
+*/
+listint_t *delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+listint_t *tmp, *copy = *head;
+
+/* Check if head node is NULL */
+if (copy == NULL)
+return (-1);
+
+/* If index is 0, delete the head node */
+if (index == 0)
+{
+*head = (head)->next; / Update head to the next node /
+free(copy); / Free memory of the deleted node */
+return (1);
+}
+
+/* Traverse to the node to be deleted */
+while (--index && copy->next)
+copy = copy->next;
+
+/* Check if index is out of range */
+if (!copy->next)
+return (-1);
+
+/* Delete the node at the given index /
+tmp = copy->next; / Save the node to be deleted /
+copy->next = tmp->next; / Update previous node's next pointer /
+free(tmp); / Free memory of the deleted node */
+return (1);
+}
+
+```
