@@ -298,3 +298,44 @@ while (node < index)
 return (head);
 
 ```
+
+8. Sum list
+Write a function that returns the sum of all the data (n) of a listint_t linked list.
+
+Prototype: int sum_listint(listint_t *head);
+if the list is empty, return 0
+
+```
+// Include the "lists.h" header file which contains the definition of listint_t
+#include "lists.h"
+
+/**
+ * sum_listint - calculates the sum of all the data in a listint_t list
+ * @head: pointer to the first node in the linked list
+ *
+ * This function takes in a pointer to the head of a linked list of type listint_t
+ * and returns the sum of all the data (integers) in the linked list.
+ *
+ * Return: the sum of all the integers in the linked list, or 0 if the list is empty.
+ */
+int sum_listint(listint_t *head)
+{
+	// Initialize a variable "sum" to 0 to keep track of the running total
+	int sum = 0;
+
+	// Traverse the linked list while the current node is not NULL
+	while(head)
+	{
+		// Add the value of the "n" member of the current node to the sum variable
+		sum = sum + head->n;
+
+		// Move the pointer to the next node in the linked list
+		head = head->next;
+	}
+
+	// Return the sum of all the integers in the linked list
+	return (sum);
+}
+
+```
+
