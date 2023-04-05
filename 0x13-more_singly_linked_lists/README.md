@@ -254,3 +254,47 @@ int pop_listint(listint_t **head)
 }
 
 ```
+
+7. Get node at index
+Write a function that returns the nth node of a listint_t linked list.
+
+Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+where index is the index of the node, starting at 0
+if the node does not exist, return NULL
+
+```
+#include "lists.h"
+/**
+ * get_nodeint_at_index - returns the node at a certain index in a linked list
+ * @head: first node in the linked list
+ * @index: index of the node to return
+ *
+ * Return: pointer to the node w are searching for
+ * otherwise NULL if not found
+ */
+
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+unsigned int node; // Counter variable to keep track of the node index
+node = 0; // Initializing the counter variable to 0
+
+// If the head of the linked list is NULL, return NULL
+if (head == NULL)
+	return (NULL);
+
+// Loop until the counter reaches the index or the end of the list is reached
+while (node < index)
+{
+	// If the next node is NULL and the index hasn't been reached yet, return NULL
+	if (head->next == NULL)
+		return (NULL);
+
+	// Move to the next node and increment the counter
+	head = head->next;
+	node++;
+}
+
+// Return a pointer to the node at the given index
+return (head);
+
+```
