@@ -338,4 +338,59 @@ int sum_listint(listint_t *head)
 }
 
 ```
+9. Insert
+Write a function that inserts a new node at a given position.
 
+Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+where idx is the index of the list where the new node should be added. Index starts at 0
+Returns: the address of the new node, or NULL if it failed
+if it is not possible to add the new node at index idx, do not add the new node and return NULL
+
+```
+#include "lists.h"
+/**
+ * insert_nodeint_at_index - inserts new node at a given position
+ * @head: pointer to the first node
+ * @idx: index where the new node is added
+ * @n: data to add in the new node
+ * Return: pointer to the new node,
+ * otherwise NULL
+ */
+
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+{
+listint_t *new = malloc(sizeof(listint_t)); // create a new node and allocate memory for it
+listint_t *copy = *head; // create a copy of the head of the linked list
+
+// check if memory allocation for the new node failed
+if (new == NULL)
+return (NULL);
+
+// set the data for the new node
+new->n = n;
+
+// if the new node is to be inserted at the beginning of the linked list
+if (idx == 0)
+{
+new->next = copy;
+*head = new;
+return (new);
+}
+
+// traverse the linked list to the position where the new node should be added
+while (--idx && copy)
+copy = copy->next;
+
+// if the position to add the new node is beyond the length of the linked list
+if (!copy)
+return (NULL);
+
+// insert the new node at the desired position
+new->next = copy->next;
+copy->next = new;
+
+// return a pointer to the new node
+return (new);
+}
+
+```
