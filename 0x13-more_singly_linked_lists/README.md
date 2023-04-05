@@ -445,3 +445,44 @@ return (1);
 }
 
 ```
+
+11. Reverse list
+Write a function that reverses a listint_t linked list.
+
+Prototype: listint_t *reverse_listint(listint_t **head);
+Returns: a pointer to the first node of the reversed list
+You are not allowed to use more than 1 loop.
+You are not allowed to use malloc, free or arrays
+You can only declare a maximum of two variables in your function
+
+```
+#include "lists.h"
+
+/**
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * This function takes a pointer to the head of a linked list, and
+ * reverses the order of the list.
+ *
+ * Return: pointer to the first node in the new list
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+    listint_t *ahead, *behind = NULL;
+
+    while (*head && (*head)->next)
+    {
+        ahead = (*head)->next;  // store next node in a temporary variable
+        (*head)->next = behind; // current node points to the previous node
+        behind = *head;         // move previous node to the current node
+        *head = ahead;          // move current node to the next node
+    }
+
+    if (*head)                  // the last node of the original list
+        (*head)->next = behind; // should point to the previous node
+
+    return (*head);             // return the new head of the reversed list
+}
+
+```
