@@ -1,4 +1,4 @@
-#include "main."
+#include "main.h"
 #include <stdio.h>
 /**
  * get_endianness - return the endianness of the machine

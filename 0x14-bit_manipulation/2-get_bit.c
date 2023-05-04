@@ -1,4 +1,4 @@
-#include "main."
+#include "main.h"
 /**
  * get_bit - Entry Point
  * @n: input to search
