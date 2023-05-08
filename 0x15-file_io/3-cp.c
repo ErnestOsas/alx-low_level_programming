@@ -51,7 +51,7 @@ int close_error(int fd)
  */
 void read_error(char *filename)
 {
-	fprintf(stderr, "Error: Can't read from file %s\n", filename);
+	dprintf(stderr, "Error: Can't read from file %s\n", filename);
 }
 
 /**
@@ -60,5 +60,5 @@ void read_error(char *filename)
  */
 void write_error(char *filename)
 {
-	fprintf(stderr, "Error: Can't write to %s\n", filename);
+	dprintf(stderr, "Error: Can't write to %s\n", filename);
 }
